@@ -27,20 +27,29 @@
               placeholder="  Email"
             />
             <br />
-            <input
-              class="border-2 w-80 mb-2 rounded-md p-2"
-              type="password"
-              placeholder="  Password"
-            />
+            <div class="border-2 flex w-80 h-12 rounded-md mb-2">
+              <input
+                class="w-72 p-2"
+                id="passwordLogin"
+                type="password"
+                placeholder="  Password"
+              />
+              <img
+                src="../assets/view.svg"
+                class="m-0 w-8 pr-2 cursor-pointer"
+                onclick="displayPass()"
+                alt=""
+              />
+            </div>
             <div class="flex">
               <div class="mb-32">
                 <input type="checkbox" id="remember" />
-                <label for="remember" class="text-blue-green"
+                <label for="remember" class="text-blue-green text-sm"
                   >Remember Me</label
                 >
               </div>
-              <div class="pl-16">
-                <a href="./register.html" class="text-blue-green"
+              <div class="pl-24">
+                <a href="./register.html" class="text-blue-green text-sm"
                   >Forgot Password?</a
                 >
               </div>
