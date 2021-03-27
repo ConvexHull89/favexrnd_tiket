@@ -9,62 +9,150 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="../style/main.css" />
-    <title>Document</title>
+    <title>Register</title>
   </head>
   <body class="bg-biru h-auto">
     <div class="flex h-auto">
       <div class="kiri flex flex-col w-1/2 p-20 pt-6 bg-white">
         <img class="w-1/5" src="../assets/main-logo.svg" alt="" />
-        <div class="my-14 ml-2">
+        <div class="mt-14 ml-2">
           <h1 class="text-4xl font-bold text-gray-700">Get Started</h1>
-          <p>Your journey starts here! Create your account now.</p>
+          <p class="pt-2">Your journey starts here! Create your account now.</p>
         </div>
-        <div class="flex flex-col p-2">
-          <div></div>
+        <div class="flex flex-col p-2 text-sm">
+          <div class="flex my-4">
+            <div class="personalInfo flex border-b-2 border-blueish pb-2">
+              <img src="../assets/user.svg" alt="" />
+              <p class="pl-2">Personal Info</p>
+            </div>
+            <div class="profilePicture flex ml-12 pb-2 w-32">
+              <img src="../assets/cameraUnactive.svg" alt="" />
+              <p class="unactive pl-2">Profile Picture</p>
+            </div>
+          </div>
           <form action="./register.html">
             <input
-              class="border-2 w-80 mb-6 rounded-md p-2"
+              class="border-2 w-80 mb-4 rounded-md p-2"
               type="email"
               placeholder="  Email"
+              name="email"
             />
             <br />
-            <input
-              class="border-2 w-80 mb-2 rounded-md p-2"
-              type="password"
-              placeholder="  Password"
-            />
-            <div class="flex">
-              <div class="mb-32">
-                <input type="checkbox" id="remember" />
-                <label for="remember" class="text-blue-green"
-                  >Remember Me</label
-                >
-              </div>
-              <div class="pl-16">
-                <a href="./register.html" class="text-blue-green"
-                  >Forgot Password?</a
-                >
-              </div>
+            <div class="border-2 flex w-80 h-12 rounded-md mb-4">
+              <input
+                class="w-72 p-2"
+                id="passwordLogin"
+                type="password"
+                placeholder="  Password"
+                name="password"
+              />
+              <img
+                src="../assets/view.svg"
+                class="m-0 w-8 pr-2 cursor-pointer"
+                onclick="displayPass()"
+                alt=""
+              />
             </div>
+            <div class="border-2 flex w-80 h-12 rounded-md mb-4">
+              <input
+                class="w-72 p-2"
+                id="confirm-password"
+                type="password"
+                placeholder="  Confirm Password"
+                name="confirm-password"
+              />
+              <img
+                src="../assets/view.svg"
+                class="m-0 w-8 pr-2 cursor-pointer"
+                onclick="displayConfirmPass()"
+                alt=""
+              />
+            </div>
+            <input
+              class="border-2 w-80 mb-4 rounded-md p-2"
+              type="text"
+              placeholder="   Date of Birth"
+              onfocus="(this.type='date')"
+              name="dob"
+            />
+            <textarea
+              class="border-2 w-80 mb-4 rounded-md p-2 h-16"
+              placeholder="Address"
+              name="address"
+              id="address"
+              rows="4"
+              cols="50"
+            >
+Address
+            </textarea>
             <div>
               <button
+                type="button"
                 class="btn bg-blue-200 p-2 w-80 blue-green text-white font-semibold h-12 rounded-md"
               >
-                Log In
+                Next
               </button>
               <p class="pl-14 text-sm pt-4">
-                Don't have an account?
-                <a
-                  href="./register.html"
-                  class="text-blue-green hover:underline"
-                  >Sign up</a
+                Already have an account?
+                <a href="./login.html" class="text-blue-green hover:underline"
+                  >Login</a
+                >
+              </p>
+            </div>
+
+            <!-- ini first part -->
+
+            <div class="flex my-4">
+              <div class="personalInfo flex pb-2 w-32">
+                <img src="../assets/userUnactive.svg" alt="" />
+                <p class="pl-2 unactive">Personal Info</p>
+              </div>
+              <div
+                class="profilePicture flex ml-12 border-b-2 border-blueish pb-2 w-32"
+              >
+                <img src="../assets/camera.svg" alt="" />
+                <p class="pl-2">Profile Picture</p>
+              </div>
+            </div>
+
+            <div class="text-blue-green">
+              <div>
+                <h1 class="font-bold">Profile Picture</h1>
+                <p>Please upload your profile picture here.</p>
+              </div>
+              <img class="py-4" src="../assets/insertPP.svg" alt="" />
+              <div>
+                <h1 class="font-semibold pb-2">Identity Card</h1>
+                <p>
+                  Please upload a selfie with your ID card. Both your face and
+                  your ID card should be shown clearly in the photo.
+                </p>
+              </div>
+              <div>
+                <p class="py-2">Sample photo</p>
+                <img class="pb-2" src="../assets/sample-photo-id.svg" alt="" />
+              </div>
+              <input type="file">
+            </div>
+
+            <div>
+              <button
+                type="button"
+                class="btn bg-blue-200 p-2 w-80 blue-green text-white font-semibold h-12 rounded-md"
+              >
+                Next
+              </button>
+              <p class="pl-14 text-sm pt-4">
+                Already have an account?
+                <a href="./login.html" class="text-blue-green hover:underline"
+                  >Login</a
                 >
               </p>
             </div>
           </form>
         </div>
       </div>
-      <div class="kanan w-1/2"></div>
+      <div class="paperAirplaneRed w-1/2"></div>
     </div>
     <script src="../script/script.js"></script>
   </body>
