@@ -8,7 +8,7 @@
       href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="../style/main.css" />
+    <link rel="stylesheet" href="../style/main.css"  />
     <title>Register</title>
   </head>
   <body class="bg-biru h-auto">
@@ -19,16 +19,22 @@
           <h1 class="text-4xl font-bold text-gray-700">Get Started</h1>
           <p class="pt-2">Your journey starts here! Create your account now.</p>
         </div>
-        <div class="flex flex-col p-2 text-sm">
+
+        <div class="flex flex-col p-2 text-sm" >
+          <!-- disini startnya -->
+          <div style="display: block;" id="personalInfo">
           <div class="flex my-4">
-            <div class="personalInfo flex border-b-2 border-blueish pb-2">
+            <div class="flex border-b-2 border-blueish pb-2">
               <img src="../assets/user.svg" alt="" />
               <p class="pl-2">Personal Info</p>
             </div>
-            <div class="profilePicture flex ml-12 pb-2 w-32">
+            <button
+              class="profilePicture flex ml-12 pb-2 w-32 cursor-pointer"
+              onclick="switchDisplay()"
+            >
               <img src="../assets/cameraUnactive.svg" alt="" />
               <p class="unactive pl-2">Profile Picture</p>
-            </div>
+            </button>
           </div>
           <form action="./register.html">
             <input
@@ -89,6 +95,7 @@ Address
               <button
                 type="button"
                 class="btn bg-blue-200 p-2 w-80 blue-green text-white font-semibold h-12 rounded-md"
+                onclick="switchDisplay()"
               >
                 Next
               </button>
@@ -99,55 +106,73 @@ Address
                 >
               </p>
             </div>
+          </div>
 
             <!-- ini first part -->
 
-            <div class="flex my-4">
-              <div class="personalInfo flex pb-2 w-32">
-                <img src="../assets/userUnactive.svg" alt="" />
-                <p class="pl-2 unactive">Personal Info</p>
-              </div>
-              <div
-                class="profilePicture flex ml-12 border-b-2 border-blueish pb-2 w-32"
-              >
-                <img src="../assets/camera.svg" alt="" />
-                <p class="pl-2">Profile Picture</p>
-              </div>
-            </div>
-
-            <div class="text-blue-green">
-              <div>
-                <h1 class="font-bold">Profile Picture</h1>
-                <p>Please upload your profile picture here.</p>
-              </div>
-              <img class="py-4" src="../assets/insertPP.svg" alt="" />
-              <div>
-                <h1 class="font-semibold pb-2">Identity Card</h1>
-                <p>
-                  Please upload a selfie with your ID card. Both your face and
-                  your ID card should be shown clearly in the photo.
-                </p>
-              </div>
-              <div>
-                <p class="py-2">Sample photo</p>
-                <img class="pb-2" src="../assets/sample-photo-id.svg" alt="" />
-              </div>
-              <input type="file">
-            </div>
-
-            <div>
-              <button
-                type="button"
-                class="btn bg-blue-200 p-2 w-80 blue-green text-white font-semibold h-12 rounded-md"
-              >
-                Next
-              </button>
-              <p class="pl-14 text-sm pt-4">
-                Already have an account?
-                <a href="./login.html" class="text-blue-green hover:underline"
-                  >Login</a
+            <div style="display: none;" id="submitProfilePicture">
+              <!-- yg camera sama sampingnya itu -->
+              <div class="flex my-4">
+                <button class="personalInfo flex pb-2 w-32" onclick="switchDisplay()">
+                  <img src="../assets/userUnactive.svg" alt="" />
+                  <p class="pl-2 unactive">Personal Info</p>
+                </button>
+                <div
+                  class="profilePicture flex ml-12 border-b-2 border-blueish pb-2 w-32"
                 >
-              </p>
+                  <img src="../assets/camera.svg" alt="" />
+                  <p class="pl-2">Profile Picture</p>
+                </div>
+              </div>
+
+              <!-- bawahnya sampe sebelum button gede -->
+              <div class="text-blue-green">
+                <div>
+                  <h1 class="font-bold">Profile Picture</h1>
+                  <p>Please upload your profile picture here.</p>
+                </div>
+                <div class="flex">
+                  <img class="py-4" src="../assets/insertPP.svg" alt="" /> 
+                  <input type="file" name="" id="" class="my-12 pl-3">
+              </div>
+                <!-- yg bulet stop disini -->
+                <div>
+                  <h1 class="font-semibold pb-2">Identity Card</h1>
+                  <p>
+                    Please upload a selfie with your ID card. Both your face and
+                    your ID card should be shown clearly in the photo.
+                  </p>
+                </div>
+                <div>
+                  <p class="py-2">Sample photo</p>
+                  <img
+                    class="pb-2"
+                    src="../assets/sample-photo-id.svg"
+                    alt=""
+                  />
+                </div>
+                <div class="border-2 border-blueish rounded-md w-min my-4">
+                  <input class="p-3" type="file" />
+                </div>
+              </div>
+
+              <!-- ini button paling bawah -->
+              <div class="text-blue-green">
+                <button
+                  type="submit"
+                  class="btn p-2 w-80 blue-green text-white font-semibold h-12 rounded-md mb-2"
+                >
+                  Sign Up
+                </button>
+                <button
+                  type="button"
+                  class="btn bg-white p-2 w-80 font-semibold h-12 rounded-md border-2 border-blueish"
+                  onclick="switchDisplay()"
+                >
+                  Back
+                </button>
+              </div>
+              <!-- sampe sini -->
             </div>
           </form>
         </div>

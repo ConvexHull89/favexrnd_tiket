@@ -16,3 +16,21 @@ function displayPass() {
       x.type = "password";
     }
   }
+
+//   register
+function switchDisplay(){
+    var profilePic = document.getElementById("submitProfilePicture");
+    var pInfo =  document.getElementById("personalInfo");
+    
+    if(profilePic.style.display === "none" || pInfo.style.display === "block")
+    {
+      profilePic.style.display = "block";
+      pInfo.style.display = "none";
+
+    }
+    else if(profilePic.style.display === "block" || pInfo.style.display === "none")
+    {
+      profilePic.style.display = "none";
+      pInfo.style.display = "block";
+    }
+}
