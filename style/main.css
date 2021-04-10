@@ -1,7 +1,13 @@
-.kanan {
+.pesawat-gede {
   background-image: url("../assets/paperplane-illus.svg");
   background-size: contain;
   background-repeat: no-repeat;
+  background: linear-gradient(
+    68.74deg,
+    rgba(94, 174, 243, 0.6468) 0%,
+    rgba(105, 161, 249, 0.6468) 50.33%,
+    rgba(18, 89, 248, 0.6048) 95.75%
+  );
 }
 
 .blue-green {
@@ -20,12 +26,24 @@
   color: #b1b1b1;
 }
 
-.border-blueish {
-  border-color: #008fac;
+.bg-blue-icon {
+  background: #5eaef3;
+}
+
+.text-blue-icon {
+  color: #5eaef3;
+}
+
+.border-blue-icon {
+  border-color: #6db4f1fb;
 }
 
 .paperAirplaneRed {
   background-image: url("../assets/paperplane-red.svg");
   background-size: contain;
   background-repeat: no-repeat;
+}
+
+.biru-button {
+  background: #1259f8;
 }

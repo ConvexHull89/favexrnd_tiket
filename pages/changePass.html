@@ -9,58 +9,47 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="../style/main.css" />
-    <title>Login</title>
+    <title>Change Password</title>
   </head>
   <body class="pesawat-gede flex justify-center content-center">
     <div
       class="bg-white flex-col justify-center w-2/5 p-2 py-10 text-center my-16 rounded-lg"
     >
       <img class="w-1/6 mx-auto" src="../assets/main-logo.svg" alt="" />
-      <h1 class="text-4xl font-bold pt-6 text-gray-800">Welcome Back!</h1>
-      <p class="text-gray-500 pt-2 w-3/4 mx-auto">
-        Let’s discover your future trip destination
-      </p>
+      <h1 class="text-4xl font-bold pt-6 text-gray-800">
+        Change Your Password
+      </h1>
 
       <form action="">
       <input
         class="border-2 border-gray-300 rounded-sm mx-half w-3/4 my-10 p-2 rounded-md"
-        type="email"
-        placeholder="Email"
+        type="password"
+        placeholder="New Password"
         name="newPassword"
+        id="newPassword"
       />
+
       <input
         class="border-2 border-gray-300 rounded-sm mx-half w-3/4 p-2 rounded-md"
         type="password"
-        placeholder="Password"
+        placeholder="Confirm Password"
         name="confirmNewPass"
+        id="confirmNewPassword"
       />
-
-      <div class="flex pt-2">
-        <div class="mb-24 pl-16">
-          <input type="checkbox" id="remember" />
-          <label for="remember" class="text-blue-green text-sm pl-1">
-            Remember Me</label
-          >
-        </div>
-        <div class="pl-36">
-          <a href="./register.html" class="text-blue-400 text-sm"
-            >Forgot Password?</a
-          >
-        </div>
-      </div>
+      <p class="text-gray-400 text-xs text-left pl-16 w-4/5 pt-2">
+        Make sure that your password contains at least 8 characters including a
+        number, lowercase, uppercase, and a symbol.
+      </p>
 
       <div>
         <button
           class="biru-button text-white font-semibold py-4 w-3/4 text-md rounded-md mt-10"
           type="submit"
+          id="submitConfirmPass"
+          onclick="confirmChangePass()"
         >
-          Log in
+          Change Password
         </button>
-        
-        <p class="pt-4 text-gray-400 text-sm">
-          Don't have an account?
-          <a href="#"><span class="text-blue-400">Sign up</span></a>
-        </p>
       </div>
     </form>
     </div>
