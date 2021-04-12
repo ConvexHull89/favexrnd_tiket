@@ -21,38 +21,52 @@
       </h1>
 
       <form action="">
-      <input
-        class="border-2 border-gray-300 rounded-sm mx-half w-3/4 my-10 p-2 rounded-md"
-        type="password"
-        placeholder="New Password"
-        name="newPassword"
-        id="newPassword"
-      />
+        <input
+          class="border-2 border-gray-300 rounded-sm mx-half w-3/4 my-10 p-2 rounded-md"
+          type="password"
+          placeholder="New Password"
+          name="newPassword"
+          id="newPassword"
+        />
 
-      <input
-        class="border-2 border-gray-300 rounded-sm mx-half w-3/4 p-2 rounded-md"
-        type="password"
-        placeholder="Confirm Password"
-        name="confirmNewPass"
-        id="confirmNewPassword"
-      />
-      <p class="text-gray-400 text-xs text-left pl-16 w-4/5 pt-2">
-        Make sure that your password contains at least 8 characters including a
-        number, lowercase, uppercase, and a symbol.
-      </p>
+        <input
+          class="border-2 border-gray-300 rounded-sm mx-half w-3/4 p-2 rounded-md"
+          type="password"
+          placeholder="Confirm Password"
+          name="confirmNewPass"
+          id="confirmNewPassword"
+        />
+        <p class="text-gray-400 text-xs text-left pl-16 w-4/5 pt-2">
+          Make sure that your password contains at least 8 characters including
+          a number, lowercase, uppercase, and a symbol.
+        </p>
+        <p id="err-confirm" class="text-red-300 hidden">
+          Password and confirmation password doesn't match
+        </p>
 
-      <div>
-        <button
-          class="biru-button text-white font-semibold py-4 w-3/4 text-md rounded-md mt-10"
-          type="submit"
-          id="submitConfirmPass"
-          onclick="confirmChangePass()"
-        >
-          Change Password
-        </button>
-      </div>
-    </form>
+        <div>
+          <button
+            class="biru-button text-white font-semibold py-4 w-3/4 text-md rounded-md mt-10"
+            type="submit"
+            id="submitConfirmPass"
+            onclick="confirmChangePass()"
+          >
+            Change Password
+          </button>
+        </div>
+      </form>
     </div>
     <script src="../script/script.js"></script>
+    <script>
+      // confirm password
+      var confirmPass = document.getElementById("confirmNewPassword");
+      confirmPass.onkeyup = function () {
+        if (confirmPass.value != newPassword.value) {
+          document.getElementById("err-confirm").style.display = "block";
+        } else {
+          document.getElementById("err-confirm").style.display = "none";
+        }
+      };
+    </script>
   </body>
 </html>

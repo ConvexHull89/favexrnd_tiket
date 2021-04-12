@@ -62,15 +62,45 @@
             name="password"
             id="password"
           />
+          <p
+            id="err-capital"
+            class="pl-16 text-red-300 text-left"
+            style="display: none"
+          >
+            Password needs to have a Capital letter
+          </p>
+          <p
+            id="err-nonCapt"
+            class="pl-16 text-red-300 text-left"
+            style="display: none"
+          >
+            Password needs to have a non capital letter
+          </p>
+          <p
+            id="err-num"
+            class="pl-16 text-red-300 text-left"
+            style="display: block"
+          >
+            Password needs to have a number
+          </p>
+          <p
+            id="err-len"
+            class="pl-16 text-red-300 text-left"
+            style="display: none"
+          >
+            Password must be at least 8 characters
+          </p>
+
           <input
             class="border-2 border-gray-300 rounded-sm mx-half w-3/4 mt-8 p-2 rounded-md"
             type="password"
             placeholder="Confirm Password"
             name="confirmPass"
             id="confirmPassword"
-            onblur="confirmpass();"
           />
-          <p id="errorMessagePassword" class="text-red-300 hidden">Password and confirmation password doesn't match</p>
+          <p id="err-confirm" class="text-red-300 hidden">
+            Password and confirmation password doesn't match
+          </p>
           <input
             class="border-2 border-gray-300 rounded-sm mx-half w-3/4 mt-8 p-2 rounded-md"
             type="date"
@@ -105,7 +135,7 @@
 
         <!-- profile picture -->
 
-        <div id="submitProfilePicture" style="display: none;">
+        <div id="submitProfilePicture" style="display: none">
           <!-- moving parts -->
           <div class="flex justify-center my-4 text-sm">
             <div class="flex p-1.5 mr-10" onclick="switchDisplay()">
@@ -128,7 +158,12 @@
               </p>
               <div class="insertPP pt-4 pb-8 flex">
                 <img src="../assets/insertPP.svg" alt="" />
-                <input class="pl-10 py-8" type="file" name="profile_picture" id="profilePictureBeneran" />
+                <input
+                  class="pl-10 py-8"
+                  type="file"
+                  name="profile_picture"
+                  id="profilePictureBeneran"
+                />
               </div>
             </div>
             <div id="insertKTP">
@@ -166,5 +201,52 @@
       </form>
     </div>
     <script src="../script/script.js"></script>
+    <script>
+      // validate password
+      var x = document.getElementById("password");
+      x.onkeyup = function () {
+        var capital = document.getElementById("err-capital");
+        var nonCapital = document.getElementById("err-nonCapt");
+        var num = document.getElementById("err-num");
+        var len = document.getElementById("err-len");
+
+        if (x.value.length < 8) {
+          len.style.display = "none";
+        } else if (x.length >= 8) {
+          len.style.display = "block";
+        }
+
+        var lowerCase = /[a-z]/g;
+        if (x.value.match(lowerCase)) {
+          nonCapital.style.display = "none";
+        } else if (!x.value.match(lowercase)) {
+          nonCapital.style.display = "block";
+        }
+
+        var upperCase = /[A-Z]/g;
+        if (!x.value.match(upperCase)) {
+          capital.style.display = "block";
+        } else if (x.value.match(upperCase)) {
+          capital.style.display = "none";
+        }
+
+        var numbers = /[0-9]/g;
+        if (!x.value.match(numbers)) {
+          num.style.display = "block";
+        } else if (x.value.match(numbers)) {
+          num.style.display = "none";
+        }
+      };
+
+      // confirm password
+      var confirmPass = document.getElementById("confirmPassword");
+      confirmPass.onkeyup = function () {
+        if (confirmPass.value != password.value) {
+          document.getElementById("err-confirm").style.display = "block";
+        } else {
+          document.getElementById("err-confirm").style.display = "none";
+        }
+      };
+    </script>
   </body>
 </html>
