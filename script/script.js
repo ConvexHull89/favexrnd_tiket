@@ -57,7 +57,7 @@ function confirmChangePass() {
 $('.one-time').slick({
     dots: true,
     infinite: true,
-    speed: 200,
+    speed: 350,
     slidesToShow: 1,
     adaptiveHeight: true,
     arrows: false
