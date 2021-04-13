@@ -52,3 +52,13 @@ function confirmChangePass() {
         btnConfirmPass.type = "submit";
     }
 }
+
+// carousel
+$('.one-time').slick({
+    dots: true,
+    infinite: true,
+    speed: 200,
+    slidesToShow: 1,
+    adaptiveHeight: true,
+    arrows: false
+  });
