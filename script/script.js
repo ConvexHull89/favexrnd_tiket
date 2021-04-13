@@ -1,6 +1,6 @@
 // login
 function displayPass() {
-    var x = document.getElementById("passwordLogin");
+    let x = document.getElementById("passwordLogin");
     if (x.type === "password") {
         x.type = "text";
     } else {
@@ -9,7 +9,7 @@ function displayPass() {
 }
 
 function displayConfirmPass() {
-    var x = document.getElementById("confirm-password");
+    let x = document.getElementById("confirm-password");
     if (x.type === "password") {
         x.type = "text";
     } else {
@@ -19,8 +19,8 @@ function displayConfirmPass() {
 
 //   register
 function switchDisplay() {
-    var profilePic = document.getElementById("submitProfilePicture");
-    var pInfo = document.getElementById("personalInfo");
+    let profilePic = document.getElementById("submitProfilePicture");
+    let pInfo = document.getElementById("personalInfo");
 
     if (profilePic.style.display === "none" || pInfo.style.display === "block") {
         profilePic.style.display = "block";
@@ -38,8 +38,6 @@ let upperCase = /[A-Z]/g;
 let number = /[0-9]/g;
 
 // changePassword
-
-
 function confirmChangePass() {
     let newPass = document.getElementById("newPassword");
     let confirmNewPass = document.getElementById("confirmNewPassword");
