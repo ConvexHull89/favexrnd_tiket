@@ -12,11 +12,52 @@
     <title>Profile</title>
   </head>
   <body class="bg-white flex flex-col">
-    <nav class="flex shadow-md py-4 px-24 justify-between">
-      <img class="w-1/6 h-1/2 py-2" src="../assets/logo-black.png" alt="" />
-      <div class="flex space-x-6">
-        <button class="w-28 font-semibold" type="button">Check Order</button>
-        <img class="" src="../assets/fillerpic.svg" alt="" />
+    <!-- nav white signed in -->
+    <nav
+      id="regisWhite"
+      class="flex py-8 px-24 justify-between sticky top-0 text-gray-700 bg-white"
+    >
+      <img class="w-30 h-10" src="../assets/logo-black.png" alt="" />
+      <div class="flex flex-col">
+        <div class="flex space-x-6">
+          <button class="w-36 pr-8" type="button">Check Order</button>
+          <img
+            class="cursor-pointer"
+            src="../assets/fillerpic.svg"
+            alt=""
+            onclick="popUpWhite()"
+          />
+        </div>
+        <div
+          id="profilePopUpWhite"
+          class="bg-white text-gray-700 rounded-lg px-4 py-6 w-9/12 mt-3 ml-4"
+          style="display: none"
+        >
+          <div class="flex border-b-2 border-gray-100 mb-5 pb-5">
+            <img src="../assets/fillerpic.svg" alt="" />
+            <h1 class="text-2xl w-1/2 text-center pl-2">Natasya Febryani</h1>
+          </div>
+          <div class="flex flex-col space-y-5">
+            <a href="">
+            <div class="flex">
+              <img src="../assets/userUnactive.svg" alt="" />
+              <p class="pl-4">Profile</p>
+            </div>
+          </a>
+          <a href="">
+            <div class="flex">
+              <img src="../assets/icon/lock.svg" alt="" />
+              <p class="pl-4">Change Password</p>
+            </div>
+          </a>
+          <a href="">
+            <div class="flex">
+              <img src="../assets/icon/door.svg" alt="" />
+              <p class="pl-4">Log Out</p>
+            </div>
+          </a>
+          </div>
+        </div>
       </div>
     </nav>
     <div id="container" class="mx-24 my-8">

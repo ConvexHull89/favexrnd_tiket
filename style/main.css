@@ -58,6 +58,12 @@
 .w-11persen {
   width: 11%;
 }
+.w-150 {
+  width: 105%;
+}
+.wf-35 {
+  width: 36px;
+}
 
 /* yang pas di klik belakangnya item */
 .modal {

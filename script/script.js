@@ -60,3 +60,21 @@ $('.one-time').slick({
     adaptiveHeight: true,
     arrows: false
   });
+
+function popUpBlue(){
+    let pop = document.getElementById("profilePopUpBlue");
+    if(pop.style.display === "none"){
+        pop.style.display = "block";
+    } else{
+        pop.style.display = "none";
+    }
+}
+
+function popUpWhite(){
+    let pop = document.getElementById("profilePopUpWhite");
+    if(pop.style.display === "none"){
+        pop.style.display = "block";
+    } else{
+        pop.style.display = "none";
+    }
+}
